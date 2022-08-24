@@ -12,6 +12,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
+         
 
     <!-- dependencia do telegram -->
     <dependencies>
@@ -21,20 +22,20 @@
             <version>5.3.0</version>
         </dependency>
     </dependencies>
-
-  <plugin>
+    
+    <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.7.0</version>
-    <inherited>true</inherited>
+    <version>3.8.1</version>
     <configuration>
-        <compilerArgs>
-            <arg>-J-Xss4m</arg>
-        </compilerArgs>
+        <source>8</source>
+        <target>8</target>
+        <debug>true</debug>
+        <debuglevel>lines,vars,source</debuglevel> 
     </configuration>
-  </plugin>
+</plugin> 
          
-         
+  
     <build>
         <finalName>${project.name}</finalName>
     </build>
