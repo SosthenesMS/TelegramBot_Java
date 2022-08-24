@@ -41,11 +41,11 @@ public class EchoBot extends TelegramLongPollingBot{
     }
 
     public static String getBotChaveToken(){
-        return "5580086888:AAH3oI8ehD-TRs2b9TUdmUVUEd8R72Uzkr4";
+        return "Chave_Token";
     }
 
     public static String getBotNomeDoUsuario(){
-        return "@May9th_bot";
+        return "User_name";
     }
 
     private SendMessage responder(Update update) {
