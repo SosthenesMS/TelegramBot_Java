@@ -23,6 +23,34 @@
         </dependency>
     </dependencies>
     
+         <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>flatten-maven-plugin</artifactId>
+        <version>1.2.1</version>
+        <executions>
+          <!-- enable flattening -->
+          <execution>
+            <id>flatten</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>flatten</goal>
+            </goals>
+          </execution>
+          <!-- ensure proper cleanup -->
+          <execution>
+            <id>flatten.clean</id>
+            <phase>clean</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <flattenDependencyMode>all</flattenDependencyMode>
+        </configuration>
+      </plugin>
+         
+   <!--      
     <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-compiler-plugin</artifactId>
@@ -34,8 +62,8 @@
         <debuglevel>lines,vars,source</debuglevel> 
     </configuration>
 </plugin> 
+-->
          
-  
     <build>
         <finalName>${project.name}</finalName>
     </build>
