@@ -21,7 +21,7 @@
         </dependency>
     </dependencies>   
     <build>
-        </plugin>
+        <plugins>
                 <plugin>
                     <groupId>com.heroku.sdk</groupId>
                     <artifactId>heroku-maven-plugin</artifactId>
