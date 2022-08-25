@@ -1,0 +1,2 @@
+1 - Verificar o plugin no arquivo pom.xml
+2 - Verificar as variaveis va na class EchoBot
