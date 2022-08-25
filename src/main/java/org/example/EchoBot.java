@@ -30,7 +30,7 @@ public class EchoBot extends TelegramLongPollingBot{
     @Override
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
-            var mensagem = responder(update);
+            SendMessage mensagem = responder(update);
             try {
                 execute(mensagem);
             } catch (TelegramApiException e) {
@@ -49,9 +49,9 @@ public class EchoBot extends TelegramLongPollingBot{
     }
 
     private SendMessage responder(Update update) {
-        var textoMensagem = update.getMessage().getText().toLowerCase();
-        var chatId = update.getMessage().getChatId().toString();
-        var resposta = "";
+        String textoMensagem = update.getMessage().getText().toLowerCase();
+        String chatId = update.getMessage().getChatId().toString();
+        String resposta = "";
 
         if(textoMensagem.startsWith("data") || textoMensagem.startsWith("1")){
             resposta = getData();
@@ -69,7 +69,7 @@ public class EchoBot extends TelegramLongPollingBot{
             resposta = "\uD83D\uDE4B\u200D♂️Olá! Eu me chamo Elliot, sou um bot interativo! \n" +
                     "Fui desenvolvido para estudos ultilizando Java 17 em Command-Lines, criação de métodos, Arrays, estruturas de repetição e \n" +
                     "a Api do telegram!";
-        } else if (textoMensagem.startsWith("help")){
+        } else if (textoMensagem.startsWith("help") || textoMensagem.startsWith("/start")){
             resposta = "Opções:\n1.Data\n2.Hora\n3.Tela\n4.Me conta uma piada nerd!\n5.Info";
         } else {
             resposta = "Não entendi!\nDigite /help para ver as opções disponíveis!";
