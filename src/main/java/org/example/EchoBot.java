@@ -30,7 +30,7 @@ public class EchoBot extends TelegramLongPollingBot{
     @Override
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
-            String mensagem = responder(update);
+            var mensagem = responder(update);
             try {
                 execute(mensagem);
             } catch (TelegramApiException e) {
@@ -49,9 +49,9 @@ public class EchoBot extends TelegramLongPollingBot{
     }
 
     private SendMessage responder(Update update) {
-        String textoMensagem = update.getMessage().getText().toLowerCase();
-        String chatId = update.getMessage().getChatId().toString();
-        String resposta = "";
+        var textoMensagem = update.getMessage().getText().toLowerCase();
+        var chatId = update.getMessage().getChatId().toString();
+        var resposta = "";
 
         if(textoMensagem.startsWith("data") || textoMensagem.startsWith("1")){
             resposta = getData();
